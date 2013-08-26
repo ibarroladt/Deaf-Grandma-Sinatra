@@ -4,6 +4,14 @@ get '/' do
   erb :index
 end
 
+
 post '/grandma' do
-  "Implement the /grandma route yourself.<br>Params: <code>#{params.inspect}</code>"
+  grandma(params[:grandma])
+  # "Implement the /grandma route yourself.<br>Params: <code>#{params.inspect}</code>"
+end
+
+
+
+def grandma(args)
+ "grandma #{args}"
 end
