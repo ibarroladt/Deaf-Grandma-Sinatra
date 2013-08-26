@@ -6,12 +6,17 @@ end
 
 
 post '/grandma' do
-  grandma(params[:grandma])
+  
+  redirect to ("/?grandma=#{grandma(params[:user_input])}")
   # "Implement the /grandma route yourself.<br>Params: <code>#{params.inspect}</code>"
 end
 
 
 
 def grandma(args)
- "grandma #{args}"
+  if args.upcase == args
+    "What do you mean, '#{args}'?! Kids these days!"
+  else
+    "Speak up, kiddo!"
+  end
 end
